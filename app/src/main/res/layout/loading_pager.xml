@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/loading_layout_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:id="@+id/state_image_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/no_order_icon"
+            android:layout_gravity="center_horizontal"
+            />
+        <TextView
+            android:id="@+id/state_text_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:textSize="16sp"
+            android:text="您还没有任何订单哦"
+            />
+        <Button
+            android:id="@+id/request_retry_button"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16sp"
+            android:textColor="#00CC00"
+            android:background="@drawable/button_border"
+            android:layout_marginTop="15dp"
+            android:text="重试"
+            />
+    </LinearLayout>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/loading_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        style="@style/AVLoadingIndicatorView.Large"
+        />
+</RelativeLayout>
