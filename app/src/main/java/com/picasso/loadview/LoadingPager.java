@@ -30,6 +30,7 @@ public class LoadingPager extends FrameLayout implements View.OnClickListener{
     public static final int STATE_SUCCESS = 3;// 成功状态
 
     public static final int STATE_REQUEST_COMPLETE = 4;//请求完成。
+    public static final int STATE_NO_NETWORK = 5;//没有网络
 
     private View mView;
     private LinearLayout loading_layout_ll;
@@ -40,7 +41,7 @@ public class LoadingPager extends FrameLayout implements View.OnClickListener{
 
     private RefreshListener mRefreshListener;
 
-    interface  RefreshListener{
+   public interface  RefreshListener{
         void refresh();
     }
     public LoadingPager(Context context) {
@@ -85,6 +86,7 @@ public class LoadingPager extends FrameLayout implements View.OnClickListener{
         setVisibility(View.VISIBLE);
         if(state==STATE_NONE){
             //默认状态。
+            setVisibility(View.GONE);
             loading_layout_ll.setVisibility(View.GONE);
             loading_view.setVisibility(View.GONE);
         }else if(state==STATE_LOADING){
@@ -95,6 +97,12 @@ public class LoadingPager extends FrameLayout implements View.OnClickListener{
             //网络加载完成。
             loading_view.setVisibility(View.GONE);
             loading_layout_ll.setVisibility(View.VISIBLE);
+        }else if(state==STATE_NO_NETWORK){
+
+            loading_view.setVisibility(View.GONE);
+            loading_layout_ll.setVisibility(View.VISIBLE);
+            request_retry_button.setVisibility(View.VISIBLE);
+            state_text_hint.setText("啊哦~服务器去月球了~~~");
         }
     }
 
@@ -107,13 +115,10 @@ public class LoadingPager extends FrameLayout implements View.OnClickListener{
     }
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.request_retry_button:
-
+        if(v.getId()== R.id.request_retry_button){
                 if(mRefreshListener!=null){
                     mRefreshListener.refresh();
                 }
-            break;
         }
     }
     public void setFreshListener(RefreshListener freshListener){
