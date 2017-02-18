@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import android.widget.TextView;
 
 import com.wang.avi.AVLoadingIndicatorView;
@@ -41,9 +40,7 @@ public class LoadingPager extends FrameLayout implements View.OnClickListener{
 
     private RefreshListener mRefreshListener;
 
-   public interface  RefreshListener{
-        void refresh();
-    }
+
     public LoadingPager(Context context) {
         super(context);
         initView(context);
@@ -97,11 +94,13 @@ public class LoadingPager extends FrameLayout implements View.OnClickListener{
             //网络加载完成。
             loading_view.setVisibility(View.GONE);
             loading_layout_ll.setVisibility(View.VISIBLE);
+            request_retry_button.setVisibility(View.GONE);
         }else if(state==STATE_NO_NETWORK){
 
             loading_view.setVisibility(View.GONE);
             loading_layout_ll.setVisibility(View.VISIBLE);
             request_retry_button.setVisibility(View.VISIBLE);
+            setCompleteImageResources(R.mipmap.no_network_icon);
             state_text_hint.setText("啊哦~服务器去月球了~~~");
         }
     }
@@ -120,6 +119,9 @@ public class LoadingPager extends FrameLayout implements View.OnClickListener{
                     mRefreshListener.refresh();
                 }
         }
+    }
+    public interface  RefreshListener{
+        void refresh();
     }
     public void setFreshListener(RefreshListener freshListener){
         this.mRefreshListener=freshListener;
