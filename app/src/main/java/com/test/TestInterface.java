@@ -1,23 +1,24 @@
-package com.interfacetest;
+package com.test;
 
 import android.view.View;
 import com.viewlistener.ViewGroupListener;
 import com.viewlistener.ViewListener;
-
 /**
  * Created by kangaroo on 2017-2-21.
  *
  */
 
-public class TestInterface implements ViewListener,ViewGroupListener,ViewListener.ClickListener{
+public class TestInterface extends TestAbstractClass implements ViewListener,ViewGroupListener,ViewListener.ClickListener {
 
+
+    TestAbstractClass testAbstractClass;
 
     @Override
     public int onClickListener(View v, int position) {
 
-        if(ClickListener.a==1){
+        if (ClickListener.a == 1) {
             return 1;
-        }else {
+        } else {
             return 0;
         }
     }
@@ -30,8 +31,10 @@ public class TestInterface implements ViewListener,ViewGroupListener,ViewListene
     @Override
     public void onLongListener(View v) {
 
-    }
+        testAbstractClass = new TestInterface();
+        testAbstractClass.getString();
 
+    }
     @Override
     public View getViewListener(View v) {
         return null;
@@ -56,4 +59,12 @@ public class TestInterface implements ViewListener,ViewGroupListener,ViewListene
     public void getLongViewListener(View v, int position) {
 
     }
+
+
+    @Override
+    protected int getIntValue() {
+        return 0;
+    }
 }
+
+
