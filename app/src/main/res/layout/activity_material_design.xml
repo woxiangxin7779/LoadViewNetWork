@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/ripple_btn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/ripple_bg"
+        android:clickable="true"
+        android:elevation="1dp"
+        android:gravity="center"
+        android:stateListAnimator="@null"
+        style="@style/CustomButton"
+        android:text="测试"
+        android:translationZ="3dp"
+        />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:cardMaxElevation="10dp"
+        app:cardBackgroundColor="@android:color/holo_green_light"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="10dp"
+        android:background="@drawable/ripple_bg"
+        android:clickable="true"
+        android:stateListAnimator="@null"
+
+        >
+        <TextView
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/ripple_bg"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:stateListAnimator="@null"
+            style="@style/CustomButton"
+            android:text="测试亏低价位自己"
+            android:translationZ="3dp"
+            />
+    </android.support.v7.widget.CardView>
+</LinearLayout>

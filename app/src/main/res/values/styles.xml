@@ -31,4 +31,11 @@
         <item name="maxHeight">24dip</item>
         <item name="indicatorName">BallPulseIndicator</item>
     </style>
+
+    <style name="CustomButton" parent="Theme.AppCompat.Light">
+        <!-- 点击高亮时背景颜色 -->
+        <item name="colorControlHighlight">@android:color/holo_blue_dark</item>
+        <!-- 按钮正常背景颜色 -->
+        <item name="colorButtonNormal">@android:color/holo_blue_light</item>
+    </style>
 </resources>

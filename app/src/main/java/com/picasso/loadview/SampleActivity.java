@@ -1,15 +1,14 @@
 package com.picasso.loadview;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-
+import android.support.v7.app.AppCompatActivity;
 /**
  * Created by kangaroo on 2017-2-16.
  * 测试的例子。
  */
 
-public class SampleActivity extends Activity {
+public class SampleActivity extends AppCompatActivity {
 
     private LoadingPager load_view;
 
