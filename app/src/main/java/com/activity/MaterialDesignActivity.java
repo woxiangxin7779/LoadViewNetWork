@@ -9,6 +9,21 @@ import com.picasso.loadview.R;
 import com.test.TestAbstractClass;
 import com.test.TestInterface;
 
+import java.util.AbstractCollection;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
+import java.util.NavigableSet;
+import java.util.Queue;
+import java.util.Stack;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 /**
  * Created by kangaroo on 2017-2-20.
  */
@@ -50,6 +65,22 @@ public class MaterialDesignActivity extends AppCompatActivity {
 
             }
         };
+//        List<T> list=new ArrayList<>() ;
+
+//        List
+//        ListIterator
+//        Map
+//        HashMap
+//        Hashtable
+//        Queue
+//        AbstractCollection
+//        NavigableSet
+//        TreeMap
+//        HashSet
+//        Stack
+//        ArrayList
+
+//        Collections
 
     }
 }
