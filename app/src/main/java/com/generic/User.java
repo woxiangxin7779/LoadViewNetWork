@@ -9,17 +9,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 /**
  * Created by kangaroo on 2017-2-21.
- *
  */
 
-public class User implements Cloneable,Serializable{
+public class User   implements Cloneable,Serializable{
 
     private String userName="";
 
-   public void setUserName(String userName){
+   public void setUserName(String userName) throws MyException{
 
        Map<String,String> k=new HashMap<>();
        this.userName=userName;

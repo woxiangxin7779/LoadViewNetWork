@@ -6,11 +6,8 @@ package com.model;
 
 public class Test {
 
-
     protected int method1(int a, int b) {
         return 0;
     }
-
-
 
 }
